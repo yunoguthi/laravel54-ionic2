@@ -28,7 +28,7 @@ class CreateUserAdminData extends Migration
      */
     public function down()
     {
-        $user = User::where('email','=',env('ADMIN_DEFAULT_EMAIL'))->first();
+        $user = \App\User::where('email','=',env('ADMIN_DEFAULT_EMAIL'))->first();
         if ($user instanceof \App\User) {
           $user->delete();
         }
