@@ -2939,3 +2939,44 @@ Stack trace:
 #26 D:\xampp\htdocs\laravel54-ionic2\public\index.php(53): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #27 D:\xampp\htdocs\laravel54-ionic2\server.php(21): require_once('D:\\xampp\\htdocs...')
 #28 {main}  
+[2019-01-30 14:33:19] local.ERROR: Symfony\Component\Console\Exception\CommandNotFoundException: There are no commands defined in the "routes" namespace.
+
+Did you mean this?
+    route in D:\xampp\htdocs\laravel54-ionic2\vendor\symfony\console\Application.php:564
+Stack trace:
+#0 D:\xampp\htdocs\laravel54-ionic2\vendor\symfony\console\Application.php(604): Symfony\Component\Console\Application->findNamespace('routes')
+#1 D:\xampp\htdocs\laravel54-ionic2\vendor\symfony\console\Application.php(229): Symfony\Component\Console\Application->find('routes:list')
+#2 D:\xampp\htdocs\laravel54-ionic2\vendor\symfony\console\Application.php(148): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 D:\xampp\htdocs\laravel54-ionic2\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php(122): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 D:\xampp\htdocs\laravel54-ionic2\artisan(35): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 {main}  
+[2019-01-30 14:33:36] local.ERROR: ReflectionException: Class App\Http\Controllers\Admin\Admin\Auth\LoginController does not exist in D:\xampp\htdocs\laravel54-ionic2\vendor\laravel\framework\src\Illuminate\Container\Container.php:729
+Stack trace:
+#0 D:\xampp\htdocs\laravel54-ionic2\vendor\laravel\framework\src\Illuminate\Container\Container.php(729): ReflectionClass->__construct('App\\Http\\Contro...')
+#1 D:\xampp\htdocs\laravel54-ionic2\vendor\laravel\framework\src\Illuminate\Container\Container.php(608): Illuminate\Container\Container->build('App\\Http\\Contro...')
+#2 D:\xampp\htdocs\laravel54-ionic2\vendor\laravel\framework\src\Illuminate\Container\Container.php(575): Illuminate\Container\Container->resolve('App\\Http\\Contro...')
+#3 D:\xampp\htdocs\laravel54-ionic2\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(728): Illuminate\Container\Container->make('App\\Http\\Contro...')
+#4 D:\xampp\htdocs\laravel54-ionic2\vendor\laravel\framework\src\Illuminate\Routing\Route.php(217): Illuminate\Foundation\Application->make('App\\Http\\Contro...')
+#5 D:\xampp\htdocs\laravel54-ionic2\vendor\laravel\framework\src\Illuminate\Routing\Route.php(747): Illuminate\Routing\Route->getController()
+#6 D:\xampp\htdocs\laravel54-ionic2\vendor\laravel\framework\src\Illuminate\Routing\Route.php(708): Illuminate\Routing\Route->controllerMiddleware()
+#7 D:\xampp\htdocs\laravel54-ionic2\vendor\laravel\framework\src\Illuminate\Foundation\Console\RouteListCommand.php(151): Illuminate\Routing\Route->gatherMiddleware()
+#8 D:\xampp\htdocs\laravel54-ionic2\vendor\laravel\framework\src\Illuminate\Foundation\Console\RouteListCommand.php(114): Illuminate\Foundation\Console\RouteListCommand->getMiddleware(Object(Illuminate\Routing\Route))
+#9 D:\xampp\htdocs\laravel54-ionic2\vendor\laravel\framework\src\Illuminate\Foundation\Console\RouteListCommand.php(86): Illuminate\Foundation\Console\RouteListCommand->getRouteInformation(Object(Illuminate\Routing\Route))
+#10 [internal function]: Illuminate\Foundation\Console\RouteListCommand->Illuminate\Foundation\Console\{closure}(Object(Illuminate\Routing\Route), 12)
+#11 D:\xampp\htdocs\laravel54-ionic2\vendor\laravel\framework\src\Illuminate\Support\Collection.php(766): array_map(Object(Closure), Array, Array)
+#12 D:\xampp\htdocs\laravel54-ionic2\vendor\laravel\framework\src\Illuminate\Foundation\Console\RouteListCommand.php(87): Illuminate\Support\Collection->map(Object(Closure))
+#13 D:\xampp\htdocs\laravel54-ionic2\vendor\laravel\framework\src\Illuminate\Foundation\Console\RouteListCommand.php(75): Illuminate\Foundation\Console\RouteListCommand->getRoutes()
+#14 [internal function]: Illuminate\Foundation\Console\RouteListCommand->fire()
+#15 D:\xampp\htdocs\laravel54-ionic2\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(29): call_user_func_array(Array, Array)
+#16 D:\xampp\htdocs\laravel54-ionic2\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(87): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#17 D:\xampp\htdocs\laravel54-ionic2\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php(31): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#18 D:\xampp\htdocs\laravel54-ionic2\vendor\laravel\framework\src\Illuminate\Container\Container.php(539): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#19 D:\xampp\htdocs\laravel54-ionic2\vendor\laravel\framework\src\Illuminate\Console\Command.php(182): Illuminate\Container\Container->call(Array)
+#20 D:\xampp\htdocs\laravel54-ionic2\vendor\symfony\console\Command\Command.php(255): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#21 D:\xampp\htdocs\laravel54-ionic2\vendor\laravel\framework\src\Illuminate\Console\Command.php(167): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Illuminate\Console\OutputStyle))
+#22 D:\xampp\htdocs\laravel54-ionic2\vendor\symfony\console\Application.php(953): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#23 D:\xampp\htdocs\laravel54-ionic2\vendor\symfony\console\Application.php(248): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Foundation\Console\RouteListCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#24 D:\xampp\htdocs\laravel54-ionic2\vendor\symfony\console\Application.php(148): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#25 D:\xampp\htdocs\laravel54-ionic2\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php(122): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#26 D:\xampp\htdocs\laravel54-ionic2\artisan(35): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#27 {main}  
