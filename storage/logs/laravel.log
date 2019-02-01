@@ -5563,3 +5563,29 @@ Stack trace:
 #69 D:\\xampp\\htdocs\\laravel54-ionic2\\server.php(21): require_once('D:\\\\xampp\\\\htdocs...')
 #70 {main}
 "} 
+[2019-02-01 16:46:13] local.ERROR: include(D:\xampp\htdocs\laravel54-ionic2\vendor\composer/../../app/Models/User.php): failed to open stream: No such file or directory {"exception":"[object] (ErrorException(code: 0): include(D:\\xampp\\htdocs\\laravel54-ionic2\\vendor\\composer/../../app/Models/User.php): failed to open stream: No such file or directory at D:\\xampp\\htdocs\\laravel54-ionic2\\vendor\\composer\\ClassLoader.php:444)
+[stacktrace]
+#0 D:\\xampp\\htdocs\\laravel54-ionic2\\vendor\\composer\\ClassLoader.php(444): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'include(D:\\\\xamp...', 'D:\\\\xampp\\\\htdocs...', 444, Array)
+#1 D:\\xampp\\htdocs\\laravel54-ionic2\\vendor\\composer\\ClassLoader.php(444): include()
+#2 D:\\xampp\\htdocs\\laravel54-ionic2\\vendor\\composer\\ClassLoader.php(322): Composer\\Autoload\\includeFile('D:\\\\xampp\\\\htdocs...')
+#3 [internal function]: Composer\\Autoload\\ClassLoader->loadClass('App\\\\Models\\\\User')
+#4 [internal function]: spl_autoload_call('App\\\\Models\\\\User')
+#5 D:\\xampp\\htdocs\\laravel54-ionic2\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Console\\ControllerMakeCommand.php(123): class_exists('App\\\\Models\\\\User')
+#6 D:\\xampp\\htdocs\\laravel54-ionic2\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Console\\ControllerMakeCommand.php(81): Illuminate\\Routing\\Console\\ControllerMakeCommand->buildModelReplacements(Array)
+#7 D:\\xampp\\htdocs\\laravel54-ionic2\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\GeneratorCommand.php(70): Illuminate\\Routing\\Console\\ControllerMakeCommand->buildClass('App\\\\Http\\\\Contro...')
+#8 [internal function]: Illuminate\\Console\\GeneratorCommand->handle()
+#9 D:\\xampp\\htdocs\\laravel54-ionic2\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(29): call_user_func_array(Array, Array)
+#10 D:\\xampp\\htdocs\\laravel54-ionic2\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#11 D:\\xampp\\htdocs\\laravel54-ionic2\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#12 D:\\xampp\\htdocs\\laravel54-ionic2\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(549): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#13 D:\\xampp\\htdocs\\laravel54-ionic2\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(183): Illuminate\\Container\\Container->call(Array)
+#14 D:\\xampp\\htdocs\\laravel54-ionic2\\vendor\\symfony\\console\\Command\\Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#15 D:\\xampp\\htdocs\\laravel54-ionic2\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(170): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#16 D:\\xampp\\htdocs\\laravel54-ionic2\\vendor\\symfony\\console\\Application.php(953): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 D:\\xampp\\htdocs\\laravel54-ionic2\\vendor\\symfony\\console\\Application.php(248): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Routing\\Console\\ControllerMakeCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#18 D:\\xampp\\htdocs\\laravel54-ionic2\\vendor\\symfony\\console\\Application.php(148): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#19 D:\\xampp\\htdocs\\laravel54-ionic2\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(88): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#20 D:\\xampp\\htdocs\\laravel54-ionic2\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(121): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#21 D:\\xampp\\htdocs\\laravel54-ionic2\\artisan(35): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#22 {main}
+"} 

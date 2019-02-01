@@ -43,6 +43,7 @@ Route::group([
       Route::get('dashboard', function() {
           return view('admin.auth.dashboard');
       });
+      Routes::resource('users', 'UsersController');
     });
 
 
