@@ -5,5 +5,6 @@
     <div class="row">
         {!! Table::withContents($users->items())->striped() !!}
     </div>
+    {!! $users->links() !!}
 </div>
 @endsection
