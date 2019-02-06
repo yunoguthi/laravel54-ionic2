@@ -13,10 +13,10 @@ class CreateUserAdminData extends Migration
      */
     public function up()
     {
-        \App\User::create([
+        \App\Models\User::create([
           'name' => env('ADMIN_DEFAULT_NAME', 'Administrator'),
           'email' => env('ADMIN_DEFAULT_EMAIL', 'admin@mail.com'),
-          'role' => \App\User::ROLE_ADMIN,
+          'role' => \App\Models\User::ROLE_ADMIN,
           'password' => bcrypt(env('ADMIN_DEFAULT_PASSWORD', 'secret'))
         ]);
     }
@@ -28,8 +28,8 @@ class CreateUserAdminData extends Migration
      */
     public function down()
     {
-        $user = \App\User::where('email','=',env('ADMIN_DEFAULT_EMAIL'))->first();
-        if ($user instanceof \App\User) {
+        $user = \App\Models\User::where('email','=',env('ADMIN_DEFAULT_EMAIL'))->first();
+        if ($user instanceof \App\Models\User) {
           $user->delete();
         }
     }
