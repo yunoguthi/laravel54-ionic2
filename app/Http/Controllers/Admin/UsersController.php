@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\User;
+use App\Forms\UserForm;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -26,7 +27,11 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+        $form = \FormBuilder::create(UserForm::class, [
+          'url' => route('admin.users.store'),
+          'method' => 'POST'
+        ]);
+        return view('admin.users.create', compact('form'));
     }
 
     /**
@@ -35,10 +40,20 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
+     public function store(Request $request)
+     {
+         /** @var Form $form*/
+         $form = \FormBuilder::create(UserForm::class);
+         if(!$form->isValid()) {
+             return redirect()->back()->withErrors($form->getErrors())->withInput();
+         }
+         $data = $form->getFieldValues();
+
+         $this->repository->create($data);
+
+         $request->session()->flash('message', 'Usuário criado com sucesso');
+         return redirect()->route('admin.users.index');
+     }
 
     /**
      * Display the specified resource.
@@ -46,10 +61,10 @@ class UsersController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
-    {
-        //
-    }
+     public function show(User $user)
+     {
+         return view('admin.users.show', compact('user'));
+     }
 
     /**
      * Show the form for editing the specified resource.
@@ -69,10 +84,19 @@ class UsersController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
-    {
-        //
-    }
+     public function update(Request $request, $id)
+     {
+         $form = \FormBuilder::create(UserForm::class,[
+             'data' => ['id'=> $id]
+         ]);
+         if(!$form->isValid()){
+             return redirect()->back()->withErrors($form->getErrors())->withInput();
+         }
+         $data = array_except($form->getFieldValues(),['password', 'role']);
+         $this->repository->update($data, $id);
+         $request->session()->flash('message', 'Usuário alterado com sucesso');
+         return redirect()->route('admin.users.index');
+     }
 
     /**
      * Remove the specified resource from storage.
