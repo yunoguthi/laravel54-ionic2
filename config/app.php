@@ -169,6 +169,7 @@ return [
         Laravel\Tinker\TinkerServiceProvider::class,
         \Bootstrapper\BootstrapperL5ServiceProvider::class,
         Kris\LaravelFormBuilder\FormBuilderServiceProvider::class,
+        Prettus\Repository\Providers\RepositoryServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -228,6 +229,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Table' => Bootstrapper\Facades\Table::class,
         'Icon' => Bootstrapper\Facades\Icon::class,
+        'Button' => Bootstrapper\Facades\Button::class,
         'Navbar' => Bootstrapper\Facades\Navbar::class,
         'Navigation' => Bootstrapper\Facades\Navigation::class,
         'FormBuilder' => \Kris\LaravelFormBuilder\Facades\FormBuilder::class,

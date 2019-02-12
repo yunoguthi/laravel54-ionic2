@@ -41,19 +41,18 @@ class UsersController extends Controller
      * @return \Illuminate\Http\Response
      */
      public function store(Request $request)
-     {
-         /** @var Form $form*/
-         $form = \FormBuilder::create(UserForm::class);
-         if(!$form->isValid()) {
-             return redirect()->back()->withErrors($form->getErrors())->withInput();
-         }
-         $data = $form->getFieldValues();
-
-         $this->repository->create($data);
-
-         $request->session()->flash('message', 'Usuário criado com sucesso');
-         return redirect()->route('admin.users.index');
-     }
+    {
+        /** @var Form $form*/
+        $form = \FormBuilder::create(UserForm::class);
+        if(!$form->isValid()){
+            return redirect()->back()->withErrors($form->getErrors())->withInput();
+        }
+        $data = $form->getFieldValues();
+        $data['role'] = User::ROLE_ADMIN;
+        User::create($data);
+        $request->session()->flash('message', 'Usuário criado com sucesso');
+        return redirect()->route('admin.users.index');
+    }
 
     /**
      * Display the specified resource.

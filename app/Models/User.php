@@ -5,6 +5,7 @@ namespace App\Models;
 use Bootstrapper\Interfaces\TableInterface;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Notifications\DefaultResetPasswordNotification;
 
 class User extends Authenticatable implements TableInterface
 {

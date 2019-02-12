@@ -20,10 +20,7 @@
             $navbar = Navbar::withBrand(config('app.name'), url('/admin/dashboard'))->inverse();
             if(Auth::check()){
                 $arrayLinks = [
-                    ['link'=> route('admin.users.index'), 'title'=>'Usuário'],
-                    ['link'=> route('admin.categories.index'), 'title'=>'Categorias'],
-                    ['link'=> route('admin.series.index'), 'title'=>'Séries'],
-                    ['link'=> route('admin.videos.index'), 'title'=>'Videos'],
+                    ['link'=> route('admin.users.index'), 'title'=>'Usuário']
                 ];
                 $menus = Navigation::links($arrayLinks);
                 $logout = Navigation::links([[
@@ -35,10 +32,6 @@
                                 'linkAttributes'=>[
                                     'onclick'=>"event.preventDefault();document.getElementById(\"form-logout\").submit();"
                                 ]
-                            ],
-                            [
-                                'link'=>route('admin.user_settings.edit'),
-                                'title'=> 'Perfil'
                             ]
                         ]
                 ]])->right();
@@ -58,7 +51,6 @@
 
         @if(Session::has('message'))
             <div class="container">
-                {!! Alert::success(Session::get('message'))->close() !!}
             </div>
         @endif
 

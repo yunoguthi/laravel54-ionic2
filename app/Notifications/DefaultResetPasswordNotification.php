@@ -3,12 +3,12 @@
 namespace App\Notifications;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Notifications\Notification;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Auth\Notifications\ResetPassword;
 
 class DefaultResetPasswordNotification extends ResetPassword
 {
+    use Queueable;
 
     /**
      * Get the mail representation of the notification.
@@ -19,24 +19,11 @@ class DefaultResetPasswordNotification extends ResetPassword
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->line('The introduction to the notification.')
-                    ->action('Notification Action', url('/'))
-                    ->line('Thank you for using our application!');
+                    ->subject("Redefinição de Senha")
+                    ->line('Você está recebendo este email porque uma redefinição de senha foi requisitada.')
+                    ->action('Redefinir senha', route('password.reset', $this->token))
+                    ->line('Se você não solicitou a redefinição, por favor desconsidere esta mensagem.');
     }
 
-    /**
-     * Build the mail representation of the notification.
-     *
-     * @param  mixed  $notifiable
-     * @return \Illuminate\Notifications\Messages\MailMessage
-     */
-    public function toMail($notifiable)
-    {
-        return (new MailMessage)
-            ->subject('Redefinição de senha')
-            ->line('Você está recebendo este e-mail, porque uma redefinição de senha foi requisitada.')
-            ->action('Redefinir senha', url(config('app.url').route('password.reset', $this->token, false)))
-            ->line('Se você não requisitou isto, por favor desconsidere.');
-    }
 
 }
