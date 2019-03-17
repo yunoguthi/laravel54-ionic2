@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        Área administrativa funcionando
+        Admin Funcionando
     </div>
 </div>
 @endsection

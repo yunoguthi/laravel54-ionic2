@@ -11,6 +11,12 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Models\User::class, 20)->states('admin')->create();
+        factory(\CodeFlix\Models\User::class, 20)
+            ->states('admin')
+            ->create()
+            ->each(function($user){
+                $user->verified = true;
+                $user->save();
+            });
     }
 }

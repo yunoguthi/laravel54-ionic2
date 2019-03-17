@@ -12,7 +12,7 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\Models\User::class, function (Faker\Generator $faker) {
+$factory->define(\CodeFlix\Models\User::class, function (Faker\Generator $faker) {
     static $password;
 
     return [
@@ -23,10 +23,34 @@ $factory->define(App\Models\User::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->state(App\Models\User::class, 'admin', function (Faker\Generator $faker) {
-  static $password;
+$factory->state(\CodeFlix\Models\User::class, 'admin', function (Faker\Generator $faker) {
+    return [
+        'role' => \CodeFlix\Models\User::ROLE_ADMIN,
+    ];
+});
 
-  return [
-      'role' => App\Models\User::ROLE_ADMIN
-  ];
+$factory->define(\CodeFlix\Models\Category::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->word,
+    ];
+});
+
+$factory->define(\CodeFlix\Models\Serie::class, function (Faker\Generator $faker) {
+    return [
+        'title' => $faker->sentence(3),
+        'description' => $faker->sentence(10),
+        'thumb' => 'thumb.jpg',
+    ];
+});
+
+$factory->define(\CodeFlix\Models\Video::class, function (Faker\Generator $faker) {
+    return [
+        'title' => $faker->sentence(3),
+        'description' => $faker->sentence(10),
+        'duration' => rand(1,30),
+        'file' => 'thumb.jpg',
+        'thumb' => 'thumb.jpg',
+        'published' => rand(0,1),
+        'completed' => 1,
+    ];
 });

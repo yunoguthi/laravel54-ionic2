@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Auth;
+namespace CodeFlix\Http\Controllers\Admin\Auth;
 
-use App\Http\Controllers\Controller;
+use CodeFlix\Http\Controllers\Controller;
+use CodeFlix\Models\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 
@@ -38,14 +39,16 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    protected function credentials(Request $request) {
-          $data = $request->only($this->username(), 'password');
-          $data['role']=\App\Models\User::ROLE_ADMIN;
-          return $data;
+    protected function credentials(Request $request)
+    {
+        $data = $request->only($this->username(), 'password');
+        $data['role'] = User::ROLE_ADMIN;
+
+        return $data;
     }
 
-    public function showLoginForm() {
+    public function showLoginForm()
+    {
         return view('admin.auth.login');
     }
-
 }
